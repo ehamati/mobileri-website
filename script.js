@@ -89,3 +89,16 @@ function dergo() { //operatori OSE || operatori DHE &&
 }
 
 sendButton.addEventListener("click", dergo);
+
+
+const koha = document.getElementById("ora"); // Gjej elementin HTML me id "ora"
+
+function perditesoKohen() {
+    const tani = new Date(); // Merr kohën aktuale
+    const kohaStr = tani.toLocaleTimeString('sq-AL', { hour12: false }); // Formato kohën në varg me formatin 24-orësh
+
+    koha.innerText = kohaStr; // Vendos vargun e formatizuar në elementin HTML
+}
+
+perditesoKohen(); // Thirret funksioni menjëherë për të vendosur kohën fillestare
+setInterval(perditesoKohen, 1000); // Përditëso kohën çdo sekondë
