@@ -10,13 +10,13 @@
 
     <!-- shiriti i menyse naviguese -->
     <nav>
-        <label class="logo">Mobileri Learti</label>
+        <label class="logo">Mobileria Learti</label>
         <ul>
             <!-- unorderedlist - list e padefinuar ose e panumeruar -->
             <li><a class="active" href="index.html">Ballina</a></li>
             <li><a href="#projektet">Projektet</a></li>
             <li><a href="#rrethnesh">Rreth Nesh</a></li>
-            <li><a href="#sherbimet">Shërbimet</a></li>
+            <li><a href="#sherbimet">Sherbimet</a></li>
             <li><a href="#kontakti">Kontakti</a></li>
         </ul>
     </nav>
@@ -25,8 +25,8 @@
     <div class="hero">
         <div class="container">
             <div class="hero-elements">
-                <h1 class="title">Ne ju garantojmë për kualitet të lartë!</h1>
-                <button class="button-hero">Më shumë...</button>
+                <h1 class="title" id="titulli-i-ri">Ne ju garantojme per kualitet te larte!</h1>
+                <button class="button-hero" onclick="ndryshotitullin()" >Me shume...</button>
             </div>
         </div>
     </div>
@@ -35,7 +35,7 @@
     <!-- paraqitja e sherbimeve ne faqe -->
     <div class="services" id="sherbimet">
         <div class="container">
-            <h1>Shërbimet</h1>
+            <h1>Sherbimet</h1>
 
             <div class="cards">
 
@@ -46,7 +46,7 @@
                         <h2>Kuzhina</h2>
                     </div>
                     <div class="back">
-                        <p>Kuzhina është zemra e shtëpise. Bëjeni te cmuar!</p>
+                        <p>Kuzhina eshte zemra e shtepise. Bejeni te cmuar!</p>
                     </div>
                 </div>
 
@@ -57,7 +57,7 @@
                         <h2>Dhoma Gjumi</h2>
                     </div>
                     <div class="back">
-                        <p>Dhoma e gjumit është vendi ku trupi gjen pushimin e duhur!</p>
+                        <p>Dhoma e gjumit eshte vendi ku trupi gjene pushimin e duhur!</p>
                     </div>
                 </div>
 
@@ -68,7 +68,7 @@
                         <h2>Komodina</h2>
                     </div>
                     <div class="back">
-                        <p>Komodinat e zbukurojnë ambientin tuaj te shtëpisë!</p>
+                        <p>Komodinat e zbukurojne ambientin tuaj te shtepise!</p>
                     </div>
                 </div>
 
@@ -76,10 +76,10 @@
                 <div class="card">
                     <div class="front">
                         <img src="library/ndryshme.png" alt="te ndryshme">
-                        <h2>Të ndryshme</h2>
+                        <h2>Te ndryshme</h2>
                     </div>
                     <div class="back">
-                        <p>Ju na jepni idene në e kthejme në produkt modern dhe kreativ!</p>
+                        <p>Ju na jepni idene ne e kthejme ne produkt modern dhe kreativ!</p>
                     </div>
                 </div>
             </div>
@@ -90,13 +90,13 @@
     <div class="category" id="projektet">
         <div class="container">
             <div class="category-elements">
-                <h1>Kategoritë</h1>
+                <h1>Kategorite</h1>
 
                 <div class="filter">
-                    <a href="#" class="button active">Të gjitha</a>
-                    <a href="#" class="button">Kuzhina</a>
-                    <a href="#" class="button">Dhoma Gjumi</a>
-                    <a href="#" class="button">Komodina</a>
+                    <a href="#" class="button active" data-filter="tegjitha">Te gjitha</a>
+                    <a href="#" class="button" data-filter="kuzhina">Kuzhina</a>
+                    <a href="#" class="button" data-filter="dhomagjumi">Dhoma Gjumi</a>
+                    <a href="#" class="button" data-filter="komodina">Komodina</a>
                 </div>
 
                 <div class="category-images">
@@ -145,8 +145,8 @@
     <!-- sektori i informatave rreth kompanise -->
     <div class="projects">
         <div class="projects-details">
-            <h1>Mobileria LEARTI ka realizuar me sukses mbi 100 punime në mbarë Kosovën!</h1>
-            <button class="button-project" type="button">Shfaq informatat e projektimeve</button>
+            <h1 id="shfaq" style="display: none" >Mobileria LEARTI ka realizuar me sukses mbi 100 punime ne mbare Kosoven!</h1>
+            <button class="button-project" type="button" onclick="shfaqpunimet()" id="butoni">Shfaq informatat e projektimeve</button>
         </div>
     </div>
 
@@ -155,15 +155,15 @@
         <div class="container">
             <div class="calculator">
                 <h1>Cmimorja</h1>
-                <p>Ju mund te kalkuloni cmimin për metër të kuzhinës duke u bazuar në modelin e mëposhtëm:</p>
+                <p>Ju mund te kalkuloni cmimin per meter te kuzhines duke u bazuar ne modelin e meposhtem:</p>
 
                 <img src="library/icona-kuzhines.png">
 
                 <label for="meter">Shtyp metrat:</label>
-                <input type="number" name="meter">
+                <input type="number" name="meter" id="input1">
 
-                <label for="result">Cmimi për metër (€):</label>
-                <input type="number" name="result">
+                <label for="result">Cmimi per meter (€):</label>
+                <input type="number" name="result" id="input2">
 
             </div>
         </div>
@@ -175,8 +175,8 @@
             <h1 id="about-us-title">Kush jemi ne?</h1>
 
             <div class="about-us-content">
-                <img src="library/about-us.jpg">
-                <img src="library/transport.jpg" style="display: none">
+                <img src="library/about-us.jpg" id="first-photo" onmouseout="mousijasht()" onmouseover="mousimbi()">
+                <img src="library/transport.jpg" style="display: none" id="second-photo" onmouseover="mousimbi()" onmouseout="mousijasht()">
 
                 <p>
                     Mobileria LEARTI eshte themeluar ne vitin 2015, gjate gjithe ketyre viteve jemi kujdesur te prodhojme modelet e mobiljeve me eksluzive me stil dhe elengance.<br>
@@ -197,13 +197,13 @@
                 <form name="myform">
 
                     <label for="emri">Emri dhe Mbiemri:</label>
-                    <input type="text" name="emri"> <br>
+                    <input type="text" name="emri" id="emriInput"> <br>
 
                     <label for="email">Adresa Elektronike:</label>
-                    <input type="email" name="email"> <br>
+                    <input type="email" name="email" id="emailInput"> <br>
 
-                    <label for="pershkrimi">Përshkrimi:</label>
-                    <textarea name="pershkrimi" rows="10"></textarea> <br>
+                    <label for="pershkrimi">Pershkrimi:</label>
+                    <textarea name="pershkrimi" rows="10" id="pershkrimiInput"></textarea> <br>
 
                     <input type="button" id="send-button" value="Dergo">
 
@@ -214,8 +214,8 @@
 
     <!-- sektori i fundit te faqes i njohur si footer -->
     <div class="footer">
-        <h4>Të gjitha të drëjtat e rezervuara nga Mobileria Learti | Mundesoi: ARRA Academy</h4>
+        <h4>Te gjitha te drejtat e rezervuara nga Mobileria Learti | Mundesoi: ARRA Academy</h4>
     </div>
 
-
+<script src="script.js"></script>
 </body></html>
